@@ -11,5 +11,6 @@
 可以实现cd，exit，help命令。
 
 感谢您的关注！
-#update
+
+# update
 2025.8.18 新增功能：展示图片。使用show your/path/your_image.jpg命令即可展示图片。
