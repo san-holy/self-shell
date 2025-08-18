@@ -4,10 +4,12 @@
 #include<unistd.h>
 #include<sys/types.h>
 #include<sys/wait.h>
+#include "lsh_show.h"
 #define LSH_RL_BUFSIZE 1024
 int lsh_cd(char **args);
 int lsh_help(char **args);
 int lsh_exit(char **args);
+//int lsh_show(char **args);
 int lsh_launch(char **args){
     pid_t pid;
     int status;
@@ -31,12 +33,14 @@ int lsh_launch(char **args){
 char *builtin_str[]={
     "cd",
     "help",
-    "exit"
+    "exit",
+    "show"
 };
 int (*builtin_func[])(char **)={
     &lsh_cd,
     &lsh_help,
-    &lsh_exit
+    &lsh_exit,
+    &lsh_show
 };
 int lsh_num_builtins(){
     return sizeof(builtin_str)/sizeof(char*);
